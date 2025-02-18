@@ -8,6 +8,7 @@ bool isPrime(int n  ) {
      }
      return true   ; 
 }
+// prince singhn
 int main() {
    
      int n ; cin >> n   ; 
