@@ -1,0 +1,1 @@
+{"name":"Local: normal","url":"c:\\Users\\raman\\OneDrive\\Desktop\\codeforces\\normal.cpp","tests":[{"id":1735848571406,"input":"4\n5\n00100\n8\n00000000\n5\n11111\n3\n110\n","output":"6\n8\n10\n6\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\raman\\OneDrive\\Desktop\\codeforces\\normal.cpp","group":"local","local":true}
