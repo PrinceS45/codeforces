@@ -24,20 +24,17 @@ using namespace std;
 const long long MOD = 1e9 + 7;
 const double PI = acos(-1);
 
-void solve() {
-    int n ; 
-    cin>> n ; 
-    
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
-    }
-    else {
-
-    }
-
+int solve() {
+    int n;
+    cin >> n;
+     char s ; 
+      int count1 = 0 , count0 = 0 ; 
+     for(int i = 0 ;  i < n ; i++) {
+            cin>>s ; 
+            if(s== '1') count1++ ; 
+            else count0++ ; 
+     }
+     return (count0 + (count0 * count1) + (count1 * (count1-1))) ; 
 }
 
 int main() {
@@ -45,7 +42,8 @@ int main() {
     int t = 1;
     cin >> t;
     while (t--) {
-        solve();
+       cout<< solve();
+       cout<<endl ; 
     }
     return 0 ; 
 }

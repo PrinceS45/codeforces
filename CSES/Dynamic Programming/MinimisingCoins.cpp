@@ -25,27 +25,31 @@ const long long MOD = 1e9 + 7;
 const double PI = acos(-1);
 
 void solve() {
-    int n ; 
-    cin>> n ; 
-    
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
+    int n , x ; 
+    cin>> n >> x ; 
+    vector<int> v (n ) ; 
+    rep(i , 0 , n) {
+        cin>>v[i] ; 
     }
-    else {
-
+    vector<long long> dp(x+1 , 1e9) ; 
+    // base case 
+    dp[0] = 0  ; 
+    rep(i , 0 , x+1) {
+        rep(j , 0 , n) {
+            if(v[j] <= i) {
+                dp[i] = min(dp[i] , dp[i- v[j]] + 1) ; 
+            }
+        }
     }
-
+    cout << (dp[x] == 1e9 ? -1 : dp[x]);
 }
 
 int main() {
     fast_io();
-    int t = 1;
-    cin >> t;
-    while (t--) {
+   // int t = 1;
+   // cin >> t;
+    //while (t--) {
         solve();
-    }
+    //}
     return 0 ; 
 }

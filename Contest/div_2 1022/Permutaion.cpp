@@ -24,20 +24,15 @@ using namespace std;
 const long long MOD = 1e9 + 7;
 const double PI = acos(-1);
 
+
 void solve() {
-    int n ; 
+    int n;
     cin>> n ; 
-    
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
-    }
-    else {
-
-    }
-
+    // Prince singh
+    int half = n / 2 ; 
+    if(n % 2 == 0) cout<<half * half + 1 ; 
+    else cout<< half * half + 1 + half; 
+    cout<<endl ; 
 }
 
 int main() {

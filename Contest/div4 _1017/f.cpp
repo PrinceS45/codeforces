@@ -25,19 +25,21 @@ const long long MOD = 1e9 + 7;
 const double PI = acos(-1);
 
 void solve() {
-    int n ; 
-    cin>> n ; 
-    
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
-    }
-    else {
-
-    }
-
+    typedef long long ll;
+     int n , m , k ; 
+     cin>>n>> m >> k  ;
+     ll limit = (n * m* 1LL) / k ; 
+       
+     for(int i =0 ; i < n ; )
+      
+     
+       rep(i , 0 , n) {
+           rep(j , 0 , m) {
+               cout<<grid[i][j]<<" " ; 
+           }
+           cout<<endl ; 
+       }
+       cout<<endl ;
 }
 
 int main() {

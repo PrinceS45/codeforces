@@ -25,27 +25,40 @@ const long long MOD = 1e9 + 7;
 const double PI = acos(-1);
 
 void solve() {
-    int n ; 
-    cin>> n ; 
-    
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
+    int n , x ; 
+    cin>> n >> x; 
+    vector<int> price(n) , pages(n) ; 
+    for(int i = 0 ; i < n ; i++) {
+        cin>> price[i]  ; 
     }
-    else {
+    for(int i = 0 ; i < n ; i++) {
+        cin>> pages[i]  ; 
+    }
+// apply dynamic programming 
+vector<vector<int>> dp(n + 1 , vector<int> (x + 1 , 0)) ; 
+// base cas i == 0then 0 
 
-    }
+for(int i = 1 ; i <= n ; i++) {
+     for(int k = 0 ; k <= x; k++) {
+        int pick = 0 ; 
+        if(price[i-1] <= k) {
+            pick = dp[i-1][k- price[i-1]] + pages[i-1]; 
+        }
+         int nPick = dp[i-1][k]  ;
+         dp[i][k] = max(pick , nPick) ; 
+     }
+}
+cout<<dp[n][x] ; 
+
+
 
 }
 
 int main() {
     fast_io();
-    int t = 1;
-    cin >> t;
-    while (t--) {
+  
+  //  while (t--) {
         solve();
-    }
+  //  }
     return 0 ; 
 }

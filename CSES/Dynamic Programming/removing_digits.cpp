@@ -22,30 +22,34 @@ using namespace std;
 #endif
 
 const long long MOD = 1e9 + 7;
+#define long long int
 const double PI = acos(-1);
 
 void solve() {
-    int n ; 
-    cin>> n ; 
-    
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
-    }
-    else {
-
-    }
+    int n;
+    cin >> n;
+     vector<int> dp(n+1 , 1e9)  ; 
+      dp[0] =  0 ; 
+      
+        for(int i = 1 ; i <= n ; i++) {
+                 string temp = to_string(i) ;
+                 for(int j =0 ; j < temp.size() ; j++) {
+                 int digit = temp[j] - '0' ; 
+                     if(digit <= i) {
+                         dp[i] = min(dp[i] ,1 + dp[i - digit]) ; 
+                     }
+                    }    
+        }
+        cout<<dp[n] << endl ; 
 
 }
 
 int main() {
     fast_io();
-    int t = 1;
-    cin >> t;
-    while (t--) {
+    // int t = 1;
+    // cin >> t;
+    // while (t--) {
         solve();
-    }
+    // }
     return 0 ; 
 }

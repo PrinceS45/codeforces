@@ -25,19 +25,23 @@ const long long MOD = 1e9 + 7;
 const double PI = acos(-1);
 
 void solve() {
-    int n ; 
-    cin>> n ; 
+    long long n;
+    cin >> n;
     
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
-    }
-    else {
-
-    }
-
+     string t = to_string(n) ; 
+     int i = t.size()-1 ; 
+     long long sub = 0 ; 
+      while(i >= 0 && t[i] == '0') {
+            sub++ ; 
+            i--   ;
+      } 
+      int j =0 ; 
+        while(j < i) {
+             if(t[j] != '0') sub++ ; 
+             j++ ; 
+        }
+       cout<<sub  ; 
+    cout << endl;
 }
 
 int main() {

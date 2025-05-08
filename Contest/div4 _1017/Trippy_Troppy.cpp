@@ -22,22 +22,37 @@ using namespace std;
 #endif
 
 const long long MOD = 1e9 + 7;
+
 const double PI = acos(-1);
 
 void solve() {
-    int n ; 
-    cin>> n ; 
+     typedef long long ll ; 
+    int n  ; 
+      cin>> n ; 
+     vector<vector<int>> grid (n , vector<int>(n)) ; 
+     rep(i , 0 , n) {
+        rep(j , 0 , n) {
+            cin >> grid[i][j] ; 
+        }
+     }
+     // apply logic 
+     vector<int> permutaion(2*n + 1 , 0)  ; 
+     rep(i , 0 , n) {
+        rep(j , 0 , n) {
+            permutaion[i+1 + j + 1] = grid[i][j] ;  
+        }
+     }
+     // find missing 
+     // one will be missing 
+     ll sum = accumulate(permutaion.begin() , permutaion.end() , 0) ;
+     permutaion[1] = ((2*n) * (2*n + 1)) / 2  - sum; 
+     
+     rep(i , 1 , 2*n + 1) {
+         cout<<permutaion[i]<<" " ;
+     }
+     cout<<endl ; 
+
     
-    pair<int,int> most = helper(s , 0 , n) ; 
-    if(s[most.one] == 0) {
-        pair<int,int> left = helper2(s , 0 , most.one , 0) ;  
-        pair<int,int> right = helper2(s , 0 , most.one + most.second, 0) ;  
-        reverse(left.second > )
-    }
-    else {
-
-    }
-
 }
 
 int main() {
